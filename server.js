@@ -10,10 +10,11 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-mongoose.connect("mongodb://localhost/userdb", { 
+mongoose.connect("mongodb://localhost/workoutdb", { 
     useNewUrlParser: true, 
     useFindAndModify: false,
     useUnifiedTopology: true,
+    useCreateIndex: true,
 });
 app.use(require('./routes/api.js'));
 app.use(require('./routes/view.js'));
